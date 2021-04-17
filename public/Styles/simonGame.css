@@ -1,0 +1,68 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  text-align: center;
+  background-color: rgb(238, 237, 237);
+}
+.Game-title{
+  background-color: white;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+}
+.stripe{
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(128, 128, 128, 0.479);
+}
+.container {
+  display: block;
+  margin: auto;
+}
+.btn {
+  margin: 25px;
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  border-radius: 20%;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.start{
+  background-color: rgb(0, 132, 255);
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  border: none;
+  width: 100px;
+  height: 40px;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: rgb(179, 174, 174);
+}
