@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+      text-align: center;
+      background-color: rgb(238, 237, 237);
+  }
+  .hero{
+      margin: 100px;
+      text-align: center;
+      position: relative;
+  }
+  input[type="text"]{
+      margin: 15px;
+      padding: 10px;
+      text-align: center;
+      width: 250px;
+      outline: none;
+  }
+  input[type="text"]:focus{
+    box-shadow: 0 0 5px rgb(0, 132, 255);
+  border: 1px solid rgb(0, 132, 255);
+  }
+  ::placeholder{
+      text-align: center;
+  }
+  button, #enter-button{
+      border: none;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+      outline: none;
+      align-self: center;
+      background-color: rgb(0, 132, 255);
+      border-radius: 5px;
+  }
+  .report{
+    background-color: rgb(243, 47, 47);
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+  #enter-button{
+    width: 100px;
+  }
+  .grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    margin: 5%;
+    margin-bottom: 2%;
+  }
+  .game{
+    background-color: rgb(226, 223, 223);
+    border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+    padding: 40px;
+    transition: ease-in-out 0.2s;
+  }
+
+  .grid-top{
+      display: flex;
+      margin-bottom: 20px;
+      justify-content: space-between;
+  }
+  .Canvas{
+    width: 800px;
+    height: 800px;
+    align-items: center;
+  }
+  canvas{
+    margin-left: 40%;
+    margin-top: 50px;
+  }
+  .close{
+    position: absolute;
+    margin-top: -370px;
+  }
+  #login-form{
+    padding-top: 65px;
+    background-color: white;
+    display: inline-block;
+    height: 400px;
+    width: 400px;
+    border-radius: 5px;
+  }
+  .title{
+    margin: 30px;
+  }
+  .game:hover{
+    transform: scale(1.02,1.02);
+    background-color: whitesmoke;
+    box-shadow: 5px 5px #dddddd;
+  }
+  @media screen and (max-width: 750px){
+    .grid-container{
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .game{
+      margin-bottom: 50px;
+    }
+    .report{
+      margin-top: -20%;
+    }
+  }
