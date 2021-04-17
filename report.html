@@ -1,0 +1,75 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="Styles/styles.css">
+</head>
+<body>
+    
+    <div class="title">
+        <h1>Here is your result</h1>
+    </div>
+    <h2 id="Result"> </h2>
+    <div class="Canvas">
+    <canvas id = "graph"></canvas>
+</div>
+    <form action="/" method="GET">
+        <button class="close" onclick="clearstorage()">Close</button>
+    </form>
+    <script>
+
+        function clearstorage(){
+            localStorage.clear();
+        }
+        if (localStorage.getItem("Color-Game")!== null && localStorage.getItem("Memory-Matrix")!== null && localStorage.getItem("Card-Seek")!== null && localStorage.getItem("Simon-Game")!== null){
+            var Score1=parseInt(localStorage.getItem("Color-Game"))
+            var Score2=parseInt(localStorage.getItem("Memory-Matrix"))
+            var Score3=parseInt(localStorage.getItem("Card-Seek"))
+            var Score4=parseInt(localStorage.getItem("Simon-Game"))
+            scores=[]
+            scores.push((Score1*10)/30);
+            scores.push((Score2*10)/30);
+            scores.push((Score3*10)/15);
+            scores.push((Score4*10)/15);
+        var ctx = document.getElementById('graph').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'polarArea',
+            data: {
+                labels: ['Grasping skills', 'Spatial skills', 'Interleaving skills','Retrieval skills' ],
+                datasets: [{
+                    label: '# of Votes',
+                    data: scores,
+                    fill: false,
+                    backgroundColor: ['rgba(0,204,204,0.7)','rgb(255,51,51)','rgb(51,153,255)','rgb(63,203,51)'],
+                    borderColor:"white",
+                    borderWidth: 2
+                }]
+            }
+        });
+        var Score1Per= (Score1*100)/30;
+        var Score2Per= (Score2*100)/30;
+        var Score3Per= (Score3*100)/15;
+        var Score4Per= (Score4*100)/15;
+        var actualPer=((Score1Per+Score2Per+Score3Per+Score4Per)*100)/400;
+        if (actualPer>=90){
+            document.getElementById("Result").innerHTML="Gold Elite";
+        }
+        else if(actualPer>=80 && actualPer<90){
+            document.getElementById("Result").innerHTML="Elite";
+        }
+        else if(actualPer>=70 && actualPer<80){
+            document.getElementById("Result").innerHTML="Above Average";
+        }
+        else if(actualPer>=55 && actualPer<70){
+            document.getElementById("Result").innerHTML="Average";
+        }
+        else{
+            document.getElementById("Result").innerHTML="Below Average";
+        }
+    }
+        </script>
+    </body>
+</html>
